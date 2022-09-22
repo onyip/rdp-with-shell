@@ -19,7 +19,7 @@ dpkg -i google-chrome-stable_current_amd64.deb
 apt install -y --fix-broken
 adduser og chrome-remote-desktop
 read -p "Enter CRP: " CRP
-bash -c "su - og -c ${CRP} --pin=123456"
+bash -c "su - og -c '${CRP} --pin=123456'"
 service chrome-remote-desktop start
 echo "ready to use!"
 nohup sleep 99999999
