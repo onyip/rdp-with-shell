@@ -14,7 +14,7 @@ apt remove --assume-yes gnome-terminal
 apt install --assume-yes xscreensaver
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -install google-chrome-stable_current_amd64.deb
+dpkg --install google-chrome-stable_current_amd64.deb
 apt install --assume-yes --fix-broken
 
 
@@ -23,7 +23,7 @@ adduser root chrome-remote-desktop
 usermod -a -G chrome-remote-desktop og
 usermod -a -G chrome-remote-desktop root
 read -p "Enter CRP: " CRP
-bash -c "su - og -c '${CRP} --pin=123456'"
+bash -c "su - og -c '${CRP}'"
 chmod -R 777 /home/og/.config/chrome-remote-desktop
 service chrome-remote-desktop start
 echo "ready to use!"
