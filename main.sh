@@ -19,6 +19,9 @@ apt install --assume-yes --fix-broken
 
 
 adduser og chrome-remote-desktop
+adduser root chrome-remote-desktop
+usermod -a -G chrome-remote-desktop og
+usermod -a -G chrome-remote-desktop root
 read -p "Enter CRP: " CRP
 bash -c "su - og -c '${CRP} --pin=123456'"
 chmod -R 777 /home/og/.config/chrome-remote-desktop
